@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+//Testing Branches
 //Dashboard Page
 Route::get('/', function () {
     return view('dashboard');
