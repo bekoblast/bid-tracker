@@ -1,33 +1,32 @@
 <?php
 
+use App\Http\Controllers\BidController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EntityController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-//Testing Branches
 //Dashboard Page
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', [DashboardController::class, 'index']);
 //-----------------------------------------------------------------
 
-//Bids Routes------------------------------------------------------
+//Start Bids Routes------------------------------------------------
 //All Bids
-Route::get('/bids', function () {
-    return view('bids.all');
-});
+Route::get('/bids', [BidController::class, 'index']);
 
 //Bid's details
-Route::get('/bids/details', function () {
-    return view('bids.details');
-});
+Route::get('/bids/details', [BidController::class, 'bidDetails']);
+//end Bids Routes--------------------------------------------------
 
-//Entity Routes----------------------------------------------------
+//************************************************************** */
+
+//start Entity Routes----------------------------------------------
 //All Entities
-Route::get('/entities', function () {
-    return view('entities.all');
-});
+Route::get('/entities', [EntityController::class, 'index']);
 
 //Entity's profile
-Route::get('/entities/profile', function () {
-    return view('entities.profile');
-});
-//-----------------------------------------------------------------
+Route::get('/entities/profile', [EntityController::class, 'entityProfile']);
+//end Entity Routes------------------------------------------------
+
+//************************************************************** */
+
