@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BidController;
+use App\Http\Controllers\BidderController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EntityController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,16 @@ Route::get('/entities', [EntityController::class, 'index']);
 //Entity's profile
 Route::get('/entities/profile', [EntityController::class, 'entityProfile']);
 //end Entity Routes------------------------------------------------
+
+//************************************************************** */
+
+//start Bidder Routes----------------------------------------------
+//All bidders
+Route::get('/bidders', [BidderController::class, 'index']);
+
+//bidder's profile
+Route::get('/bidders/profile', [BidderController::class, 'bidderProfile']);
+//end bidder Routes------------------------------------------------
 
 //************************************************************** */
 
