@@ -4,6 +4,7 @@ use App\Http\Controllers\BidController;
 use App\Http\Controllers\BidderController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EntityController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -41,3 +42,17 @@ Route::get('/bidders/profile', [BidderController::class, 'bidderProfile']);
 
 //************************************************************** */
 
+//start User Routes----------------------------------------------
+
+//user login
+Route::get('/users/login', [UserController::class, 'login']);
+//end User Routes------------------------------------------------
+
+//All users
+Route::get('/users', [UserController::class, 'index']);
+
+//bidder's profile
+Route::get('/users/profile', [UserController::class, 'userProfile']);
+//end User Routes------------------------------------------------
+
+//************************************************************** */
